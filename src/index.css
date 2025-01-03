@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #D4AF37;  /* Premium gold */
+  --secondary: #1A1A1A; /* Rich dark background */
+  --accent: #FFF;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/80;
+}
+
+@layer base {
+  body {
+    @apply bg-secondary text-white font-['Playfair_Display'] antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold font-['Cormorant_Garamond'];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative px-8 py-4 bg-primary text-black rounded-none
+           hover:bg-primary/90 transition-all duration-500
+           border border-primary hover:border-primary/50
+           font-medium tracking-wider uppercase text-sm
+           before:content-[''] before:absolute before:inset-0
+           before:border before:border-primary/30 before:scale-x-[1.1]
+           before:scale-y-[1.3] before:-z-10 before:transition-transform
+           before:duration-500 hover:before:scale-x-[1.15] hover:before:scale-y-[1.4];
+  }
+
+  .btn-secondary {
+    @apply relative px-8 py-4 border border-primary text-primary rounded-none
+           hover:bg-primary/10 transition-all duration-500
+           font-medium tracking-wider uppercase text-sm
+           before:content-[''] before:absolute before:inset-0
+           before:border before:border-primary/30 before:scale-x-[1.1]
+           before:scale-y-[1.3] before:-z-10 before:transition-transform
+           before:duration-500 hover:before:scale-x-[1.15] hover:before:scale-y-[1.4];
+  }
+
+  .menu-item {
+    @apply relative p-6 rounded-none border border-primary/20
+           hover:border-primary/50 transition-all duration-500
+           bg-black/40 backdrop-blur-md;
+  }
+}
+
+/* Menu Item Styles */
+.menu-item {
+  position: relative;
+}
+
+.menu-item::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent
+         opacity-0 transition-opacity duration-500;
+}
+
+.menu-item:hover::before {
+  @apply opacity-100;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* Menu navigation styles */
+.menu-nav-link {
+  @apply relative px-4 py-2 text-gray-400 hover:text-primary transition-colors duration-300;
+}
+
+.menu-nav-link.active {
+  @apply text-primary;
+}
+
+.menu-nav-link.active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary;
+}
+
+/* Gallery item styles */
+.gallery-item {
+  @apply relative overflow-hidden;
+}
+
+.gallery-item-image {
+  @apply w-full h-full object-cover transition-transform duration-700;
+}
+
+.gallery-item:hover .gallery-item-image {
+  @apply scale-110;
+}
+
+.gallery-item-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent 
+         opacity-0 transition-opacity duration-500;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  @apply opacity-100;
+}
+
+/* Section styles */
+.section-padding {
+  @apply py-24;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Text styles */
+.heading-primary {
+  @apply text-4xl lg:text-5xl font-bold text-primary mb-8 leading-tight;
+}
+
+.text-body {
+  @apply text-gray-300 text-lg leading-relaxed;
+}
+
+/* Background patterns */
+.pattern-dots {
+  background-image: radial-gradient(circle at 2px 2px, var(--primary) 1px, transparent 0);
+  background-size: 40px 40px;
+  @apply opacity-5;
+}
+
+/* Border effects */
+.border-animated {
+  @apply relative;
+}
+
+.border-animated::after {
+  content: '';
+  @apply absolute inset-0 border border-primary/20 scale-90 
+         transition-transform duration-700;
+}
+
+.border-animated:hover::after {
+  @apply scale-95;
+}
+
+@layer utilities {
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Update the scroll behavior for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper stacking context for fixed elements */
+.fixed {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Add smooth transition for backdrop blur */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}

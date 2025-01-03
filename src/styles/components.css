@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Navbar Styles */
+  .navbar-fixed {
+    @apply fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black/90 backdrop-blur-sm;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    @apply relative min-h-screen flex items-center justify-center bg-center bg-cover;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0 bg-black/70;
+  }
+
+  /* Menu Item Card */
+  .menu-item {
+    @apply flex justify-between items-center p-4 rounded-lg;
+    @apply border border-gray-800;
+    @apply hover:border-[#FF8C00];
+    @apply transition-all duration-300;
+    @apply bg-black/50 backdrop-blur-sm;
+  }
+
+  /* Gallery Item */
+  .gallery-item {
+    @apply relative overflow-hidden rounded-lg cursor-pointer group;
+  }
+
+  .gallery-overlay {
+    @apply absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100;
+    @apply transition-opacity duration-300;
+    @apply flex items-center justify-center;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-[#FF8C00] text-white rounded-lg;
+    @apply hover:bg-[#e67e00] transition-colors duration-300;
+    @apply font-medium text-center;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-[#FF8C00] text-[#FF8C00] rounded-lg;
+    @apply hover:bg-[#FF8C00] hover:text-white transition-colors duration-300;
+    @apply font-medium text-center;
+  }
+
+  /* Section Layout */
+  .section-padding {
+    @apply py-16 px-4 md:px-6 lg:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Navigation Links */
+  .nav-link {
+    @apply text-white hover:text-[#FF8C00] transition-colors duration-300;
+  }
+
+  /* Menu Card */
+  .menu-card {
+    @apply bg-black/50 backdrop-blur-sm border border-gray-800 rounded-lg p-6;
+    @apply hover:border-[#FF8C00] transition-all duration-300;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Image Hover Effects */
+.image-scale {
+  @apply transition-transform duration-300;
+}
+
+.image-scale:hover {
+  @apply scale-105;
+}
+
+/* Text Styles */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Layout Utilities */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.grid-auto-fit {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
