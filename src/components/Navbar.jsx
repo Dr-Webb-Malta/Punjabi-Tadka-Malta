@@ -35,18 +35,44 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
+  const navLinkVariants = {
+    initial: { scale: 1 },
+    hover: { 
+      scale: 1.1,
+      transition: { duration: 0.2 }
+    }
+  };
+
+  const mobileNavLinkVariants = {
+    initial: { scale: 1, x: 0 },
+    hover: { 
+      scale: 1.1,
+      x: 10,
+      transition: { duration: 0.2 }
+    }
+  };
+
   return (
-    <nav 
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        scrolled ? 'backdrop-blur-md bg-white/[0.02]' : 'bg-transparent'
-      }`}
-    >
-      <div className="container-custom">
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${
+      scrolled ? 'bg-gradient-to-b from-black/80 to-black/0 backdrop-blur-lg' : 'bg-transparent'
+    }`}>
+      {/* Gradient Border Bottom */}
+      {scrolled && (
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      )}
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link to="/" className="relative z-50">
-            <img
-              className="h-16 w-auto transition-transform duration-300 hover:scale-105"
+          <Link 
+            to="/" 
+            className="relative z-50 group"
+            onClick={() => setIsOpen(false)}
+          >
+            <motion.img
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              className="h-16 w-auto"
               src="/src/assets/images/logo/Logo.png"
               alt="Punjabi Tadka Malta"
             />
@@ -55,113 +81,98 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {NAVIGATION.map((item) => (
-              <Link
+              <motion.div
                 key={item.name}
-                to={item.path}
-                className={`relative text-sm tracking-wider uppercase ${
-                  location.pathname === item.path
-                    ? 'text-primary'
-                    : 'text-white hover:text-primary'
-                } transition-colors duration-300`}
+                variants={navLinkVariants}
+                initial="initial"
+                whileHover="hover"
               >
-                {location.pathname === item.path && (
-                  <motion.span
-                    layoutId="underline"
-                    className="absolute left-0 top-full block h-px w-full bg-primary"
-                  />
-                )}
-                {item.name}
-              </Link>
+                <Link
+                  to={item.path}
+                  className={`relative text-sm tracking-wider uppercase ${
+                    location.pathname === item.path
+                      ? 'text-primary'
+                      : 'text-white hover:text-primary'
+                  } transition-colors duration-300`}
+                >
+                  {item.name}
+                  {location.pathname === item.path && (
+                    <motion.span
+                      layoutId="underline"
+                      className="absolute left-0 top-full block h-px w-full bg-primary"
+                    />
+                  )}
+                </Link>
+              </motion.div>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          <motion.button
+            whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden relative z-50 p-2 text-white hover:text-primary transition-colors"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
             <div className="w-8 h-8 flex flex-col items-center justify-center space-y-1.5">
-              <span
-                className={`block w-6 h-0.5 bg-current transform transition-all duration-300 ${
-                  isOpen ? 'rotate-45 translate-y-2' : ''
-                }`}
+              <motion.span
+                animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                className="block w-6 h-0.5 bg-current transform transition-transform duration-300"
               />
-              <span
-                className={`block w-6 h-0.5 bg-current transform transition-all duration-300 ${
-                  isOpen ? 'opacity-0' : ''
-                }`}
+              <motion.span
+                animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+                className="block w-6 h-0.5 bg-current transition-opacity duration-300"
               />
-              <span
-                className={`block w-6 h-0.5 bg-current transform transition-all duration-300 ${
-                  isOpen ? '-rotate-45 -translate-y-2' : ''
-                }`}
+              <motion.span
+                animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                className="block w-6 h-0.5 bg-current transform transition-transform duration-300"
               />
             </div>
-          </button>
+          </motion.button>
         </div>
       </div>
 
-      {/* Full Screen Mobile Menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "100vh" }}
+            exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-40 md:hidden bg-black/95 backdrop-blur-lg"
           >
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-black/95 backdrop-blur-md"
-            />
-
-            {/* Menu Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ delay: 0.1, duration: 0.3 }}
-              className="relative h-full flex flex-col items-center justify-center p-8"
-            >
-              <div className="flex flex-col items-center space-y-8">
-                {NAVIGATION.map((item, index) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 + index * 0.1 }}
+            <div className="flex flex-col items-center justify-center min-h-screen p-4">
+              {NAVIGATION.map((item, index) => (
+                <motion.div
+                  key={item.name}
+                  variants={mobileNavLinkVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  custom={index}
+                  className="my-4"
+                >
+                  <Link
+                    to={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-3xl font-light tracking-wider uppercase ${
+                      location.pathname === item.path
+                        ? 'text-primary'
+                        : 'text-white hover:text-primary'
+                    } transition-colors duration-300 flex items-center gap-2`}
                   >
-                    <Link
-                      to={item.path}
-                      className={`text-3xl font-light tracking-wider uppercase ${
-                        location.pathname === item.path
-                          ? 'text-primary'
-                          : 'text-white hover:text-primary'
-                      } transition-colors duration-300`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Social Links or Additional Info can be added here */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="absolute bottom-12 flex flex-col items-center"
-              >
-                <p className="text-gray-400 text-sm mb-4">Visit Us</p>
-                <p className="text-white text-lg font-light">+356 2134 3841</p>
-              </motion.div>
-            </motion.div>
+                    {location.pathname === item.path && (
+                      <motion.span
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="block w-2 h-2 rounded-full bg-primary"
+                      />
+                    )}
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
