@@ -1,5 +1,6 @@
 import { RouterProvider } from 'react-router-dom';
 import { router } from './routes';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './index.css';
 import './styles/components.css';
 import './styles/animations.css';
