@@ -44,7 +44,7 @@ const AboutSection = () => {
           >
             <div className="relative aspect-square overflow-hidden">
               <img
-                src="/public/assets/images/dishes/dish6.png"
+                src="/assets/images/dishes/dish6.png"
                 alt="Restaurant Ambiance"
                 className="object-cover w-full h-full transform scale-110 hover:scale-105 transition-transform duration-700"
               />

@@ -13,7 +13,7 @@ const Contact = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url("/public/assets/images/dishes/dish8.png")',
+            backgroundImage: 'url("/assets/images/dishes/dish8.png")',
           }}
         >
           <div className="absolute inset-0 bg-black/80"></div>
@@ -62,7 +62,7 @@ const Contact = () => {
                 className="w-[280px] h-[72px] transition-transform hover:scale-105 duration-300"
               >
                 <img 
-                  src="/public/assets/Button1.png" 
+                  src="/assets/Button1.png" 
                   alt="Order from Bolt Food"
                   className="w-full h-full object-contain"
                 />
@@ -74,7 +74,7 @@ const Contact = () => {
                 className="w-[280px] h-[72px] transition-transform hover:scale-105 duration-300"
               >
                 <img 
-                  src="/public/assets/Button2.png" 
+                  src="/assets/Button2.png" 
                   alt="Order from Wolt"
                   className="w-full h-full object-contain"
                 />
