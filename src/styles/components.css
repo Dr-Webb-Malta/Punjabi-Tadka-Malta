@@ -3,109 +3,378 @@
 @tailwind utilities;
 
 @layer components {
-  /* Navbar Styles */
+  /* Navbar */
   .navbar-fixed {
-    @apply fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black/90 backdrop-blur-sm;
+    @apply fixed top-0 left-0 w-full z-50 transition-all duration-300;
+    @apply bg-surface/95 backdrop-blur-sm shadow-card;
+  }
+
+  .nav-link {
+    @apply text-text hover:text-primary transition-colors duration-300;
+    @apply text-lg font-medium relative;
+    @apply after:absolute after:bottom-0 after:left-0 after:w-0;
+    @apply after:h-0.5 after:bg-primary after:transition-all;
+    @apply hover:after:w-full;
   }
 
   /* Hero Section */
   .hero-section {
-    @apply relative min-h-screen flex items-center justify-center bg-center bg-cover;
+    @apply relative min-h-screen flex items-center;
+    @apply bg-gradient-yellow;
+  }
+
+  .hero-content {
+    @apply container mx-auto px-4 py-24 text-center relative z-10;
   }
 
   .hero-overlay {
-    @apply absolute inset-0 bg-black/70;
+    @apply absolute inset-0 bg-gradient-to-b from-white/10 to-white/5;
   }
 
-  /* Menu Item Card */
+  /* Feature Section */
+  .feature-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+  }
+
+  .feature-card {
+    @apply bg-surface p-8 rounded-2xl text-center;
+    @apply shadow-card hover:shadow-card-hover;
+    @apply transform transition-all duration-300;
+    @apply hover:-translate-y-1;
+  }
+
+  .feature-icon {
+    @apply w-16 h-16 mx-auto mb-6;
+    @apply text-primary bg-primary/10 rounded-2xl;
+    @apply flex items-center justify-center;
+  }
+
+  /* Menu Section */
+  .menu-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+  }
+
   .menu-item {
-    @apply flex justify-between items-center p-4 rounded-lg;
-    @apply border border-gray-800;
-    @apply hover:border-[#FF8C00];
-    @apply transition-all duration-300;
-    @apply bg-black/50 backdrop-blur-sm;
+    @apply bg-surface p-6 rounded-xl;
+    @apply shadow-card hover:shadow-card-hover;
+    @apply border border-primary/10 hover:border-primary/30;
+    @apply transform transition-all duration-300;
+    @apply hover:-translate-y-1;
+    @apply flex justify-between items-center;
   }
 
-  /* Gallery Item */
+  .menu-category-tabs {
+    @apply flex flex-wrap justify-center gap-4 mb-12;
+  }
+
+  .menu-category-tab {
+    @apply px-6 py-2 rounded-full;
+    @apply text-text font-medium;
+    @apply transition-all duration-300;
+    @apply hover:bg-primary hover:text-text;
+    @apply cursor-pointer;
+  }
+
+  .menu-category-tab.active {
+    @apply bg-primary text-text;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
+  }
+
   .gallery-item {
-    @apply relative overflow-hidden rounded-lg cursor-pointer group;
+    @apply relative overflow-hidden rounded-xl;
+    @apply shadow-card hover:shadow-card-hover;
+    @apply transition-all duration-300;
   }
 
   .gallery-overlay {
-    @apply absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100;
+    @apply absolute inset-0 bg-gradient-yellow/80;
+    @apply opacity-0 group-hover:opacity-90;
     @apply transition-opacity duration-300;
     @apply flex items-center justify-center;
   }
 
-  /* Button Styles */
-  .btn-primary {
-    @apply px-6 py-3 bg-[#FF8C00] text-white rounded-lg;
-    @apply hover:bg-[#e67e00] transition-colors duration-300;
-    @apply font-medium text-center;
+  /* Contact Section */
+  .contact-section {
+    @apply bg-surface-light py-24;
   }
 
-  .btn-secondary {
-    @apply px-6 py-3 border-2 border-[#FF8C00] text-[#FF8C00] rounded-lg;
-    @apply hover:bg-[#FF8C00] hover:text-white transition-colors duration-300;
-    @apply font-medium text-center;
+  .contact-card {
+    @apply bg-surface p-8 rounded-2xl;
+    @apply shadow-card border border-primary/10;
   }
 
-  /* Section Layout */
-  .section-padding {
-    @apply py-16 px-4 md:px-6 lg:px-8;
+  .contact-info {
+    @apply flex items-center space-x-4 text-text;
+    @apply p-4 rounded-xl hover:bg-primary/10;
+    @apply transition-all duration-300;
   }
 
-  .container-custom {
-    @apply max-w-7xl mx-auto;
+  /* Footer */
+  .footer {
+    @apply bg-secondary text-white py-16;
   }
 
-  /* Navigation Links */
-  .nav-link {
-    @apply text-white hover:text-[#FF8C00] transition-colors duration-300;
+  .footer-grid {
+    @apply grid grid-cols-1 md:grid-cols-4 gap-8;
   }
 
-  /* Menu Card */
-  .menu-card {
-    @apply bg-black/50 backdrop-blur-sm border border-gray-800 rounded-lg p-6;
-    @apply hover:border-[#FF8C00] transition-all duration-300;
+  .footer-link {
+    @apply text-white/80 hover:text-primary;
+    @apply transition-colors duration-300;
   }
-}
 
-/* Custom Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  /* Order Buttons */
+  .order-button {
+    @apply inline-flex items-center gap-2;
+    @apply px-8 py-3 rounded-xl;
+    @apply font-medium transition-all duration-300;
+    @apply hover:-translate-y-0.5;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .order-button-primary {
+    @apply bg-primary text-text;
+    @apply shadow-yellow hover:shadow-yellow-hover;
   }
-}
 
-.fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
-}
+  .order-button-secondary {
+    @apply bg-secondary text-white;
+    @apply shadow-purple hover:shadow-purple-hover;
+  }
 
-/* Image Hover Effects */
-.image-scale {
-  @apply transition-transform duration-300;
-}
+  /* Hours List */
+  .hours-list {
+    @apply space-y-4;
+  }
 
-.image-scale:hover {
-  @apply scale-105;
-}
+  .hours-item {
+    @apply flex justify-between items-center;
+    @apply py-2 border-b border-primary/10;
+  }
 
-/* Text Styles */
-.text-balance {
-  text-wrap: balance;
-}
+  /* Social Links */
+  .social-links {
+    @apply flex items-center space-x-4;
+  }
 
-/* Layout Utilities */
-.flex-center {
+  .social-link {
+    @apply w-10 h-10 rounded-full;
+    @apply flex items-center justify-center;
+    @apply text-text hover:text-primary;
+    @apply transition-colors duration-300;
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    @apply bg-surface p-6 rounded-xl;
+    @apply shadow-card hover:shadow-card-hover;
+    @apply transform transition-all duration-300;
+    @apply hover:-translate-y-1;
+  }
+
+  /* CTA Sections */
+  .cta-section {
+    @apply bg-gradient-purple text-white py-16;
+  }
+
+  /* Modal */
+  .modal-backdrop {
+    @apply fixed inset-0 bg-text/50 backdrop-blur-sm z-50;
+    @apply flex items-center justify-center;
+  }
+
+  .modal-content {
+    @apply bg-surface rounded-xl p-6 max-w-lg w-full mx-4;
+    @apply shadow-card border border-primary/10;
+  }
+/* Modal */
+.modal-backdrop {
+  @apply fixed inset-0 bg-text/50 backdrop-blur-sm z-50;
   @apply flex items-center justify-center;
 }
 
-.grid-auto-fit {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+.modal-content {
+  @apply bg-surface rounded-xl p-6 max-w-lg w-full mx-4;
+  @apply shadow-card border border-primary/10;
+}
+
+/* Additional Utility Components */
+.badge {
+  @apply px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-primary {
+  @apply bg-primary/20 text-text;
+}
+
+.badge-secondary {
+  @apply bg-secondary/20 text-secondary;
+}
+
+/* Alerts */
+.alert {
+  @apply p-4 rounded-xl mb-4;
+}
+
+.alert-success {
+  @apply bg-green-50 text-green-800 border border-green-100;
+}
+
+.alert-warning {
+  @apply bg-primary/10 text-text border border-primary/20;
+}
+
+/* Price Tags */
+.price-tag {
+  @apply font-bold text-lg text-primary;
+  @apply px-3 py-1 rounded-lg bg-primary/10;
+}
+
+/* Background Patterns */
+.pattern-dots {
+  @apply absolute inset-0 opacity-10;
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-grid {
+  @apply absolute inset-0 opacity-10;
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, currentColor 1px, transparent 1px),
+                   linear-gradient(to bottom, currentColor 1px, transparent 1px);
+}
+
+/* Hover Effects */
+.hover-lift {
+  @apply transition-transform duration-300;
+  @apply hover:-translate-y-1 hover:shadow-card-hover;
+}
+
+.hover-glow {
+  @apply transition-all duration-300;
+  @apply hover:shadow-yellow;
+}
+
+/* Loading States */
+.loading-skeleton {
+  @apply animate-pulse bg-surface-light rounded;
+}
+
+.loading-spinner {
+  @apply animate-spin w-5 h-5 border-2;
+  @apply border-primary border-t-transparent rounded-full;
+}
+
+/* Special Sections */
+.special-offer {
+  @apply relative overflow-hidden bg-gradient-bright;
+  @apply py-16 px-4 rounded-2xl text-text;
+}
+
+.special-offer-tag {
+  @apply absolute top-4 right-4;
+  @apply bg-secondary text-white px-4 py-1 rounded-full;
+  @apply text-sm font-medium transform rotate-3;
+}
+
+/* Image Treatments */
+.img-rounded {
+  @apply rounded-xl overflow-hidden;
+  @apply transition-transform duration-500;
+  @apply hover:scale-105;
+}
+
+.img-shadow {
+  @apply shadow-card hover:shadow-card-hover;
+  @apply transition-shadow duration-300;
+}
+
+/* Form Elements */
+.form-input {
+  @apply w-full px-4 py-3 rounded-xl;
+  @apply bg-surface border border-primary/20;
+  @apply focus:border-primary focus:ring-2 focus:ring-primary/20;
+  @apply text-text placeholder-text-light/60;
+  @apply transition-all duration-300;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-text mb-2;
+}
+
+.form-error {
+  @apply text-accent-red text-sm mt-1;
+}
+
+/* Navigation Elements */
+.breadcrumb {
+  @apply flex items-center space-x-2 text-sm text-text-light;
+}
+
+.breadcrumb-separator {
+  @apply text-primary;
+}
+
+/* Stats */
+.stat-card {
+  @apply bg-surface p-6 rounded-xl;
+  @apply shadow-card border border-primary/10;
+  @apply text-center;
+}
+
+.stat-number {
+  @apply text-3xl font-bold text-primary mb-2;
+}
+
+.stat-label {
+  @apply text-text-light;
+}
+
+/* Dividers */
+.divider {
+  @apply h-px w-full my-8;
+  @apply bg-gradient-to-r from-transparent via-primary/30 to-transparent;
+}
+
+.divider-vertical {
+  @apply w-px h-full mx-4;
+  @apply bg-gradient-to-b from-transparent via-primary/30 to-transparent;
+}
+
+/* Scrollbar for containers */
+.custom-scrollbar {
+  @apply scrollbar-thin scrollbar-thumb-primary scrollbar-track-surface-light;
+}
+
+/* Responsive Containers */
+.container-small {
+  @apply max-w-3xl mx-auto px-4;
+}
+
+.container-large {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    @apply hidden;
+  }
+  .print-only {
+    @apply block;
+  }
+}
+
+/* Accessibility */
+.sr-only {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden;
+  @apply whitespace-nowrap border-0;
+}
+
+.focus-outline {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
+}
 }

@@ -7,11 +7,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#D4AF37',    // Premium gold
-        secondary: '#1A1A1A',  // Rich dark background
-        accent: '#FFFFFF',     // White
-        'primary-dark': '#B69121',  // Darker gold for hover states
-        'primary-light': '#E5C65C',  // Lighter gold for highlights
+        primary: '#f8d636',      // Your bright yellow
+        'primary-light': '#FFE57F',
+        'primary-dark': '#E5C118',
+        secondary: '#6A1B9A',    // Rich purple
+        'secondary-light': '#8E24AA',
+        'secondary-dark': '#4A148C',
+        'accent-orange': '#FF9F43',
+        'accent-red': '#FF5252',
+        'surface': '#FFFFFF',    // Pure white
+        'surface-light': '#F8F9FA',
+        'surface-tint': '#FFF8E1',
+        'text': '#2D3436',       // Main text
+        'text-light': '#636E72', // Secondary text
+        'text-white': '#FFFFFF',
       },
       fontFamily: {
         'display': ['Marcellus', 'serif'],
@@ -19,42 +28,40 @@ export default {
         'accent': ['Italiana', 'serif'],
       },
       fontSize: {
-        'xs': ['0.75rem', { lineHeight: '1rem' }],
-        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-        'base': ['1rem', { lineHeight: '1.5rem' }],
-        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
-        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
-        '2xl': ['1.5rem', { lineHeight: '2rem' }],
-        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-        '5xl': ['3rem', { lineHeight: '1.16' }],
-        '6xl': ['3.75rem', { lineHeight: '1.15' }],
+        'hero': ['4.5rem', { lineHeight: '1.1' }],
       },
-      spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
+      backgroundImage: {
+        'gradient-yellow': 'linear-gradient(135deg, #f8d636 0%, #FFE57F 100%)',
+        'gradient-purple': 'linear-gradient(135deg, #6A1B9A 0%, #8E24AA 100%)',
+        'gradient-orange': 'linear-gradient(135deg, #FF9F43 0%, #FFBE76 100%)',
+        'gradient-bright': 'linear-gradient(45deg, #f8d636 0%, #FF9F43 100%)',
+      },
+      boxShadow: {
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+        'yellow': '0 4px 6px -1px rgba(248, 214, 54, 0.3)',
+        'yellow-hover': '0 8px 12px -3px rgba(248, 214, 54, 0.4)',
+        'purple': '0 4px 6px -1px rgba(106, 27, 154, 0.3)',
+        'purple-hover': '0 8px 12px -3px rgba(106, 27, 154, 0.4)',
+      },
+      borderRadius: {
+        'xl': '1rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-out',
+        'float': 'float 3s ease-in-out infinite',
         'slide-up': 'slideUp 0.5s ease-out',
       },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-fade': 'linear-gradient(to bottom, rgba(0,0,0,0.8), transparent)',
-      },
-      boxShadow: {
-        'gold': '0 4px 14px -2px rgba(212, 175, 55, 0.1)',
-        'gold-lg': '0 10px 25px -3px rgba(212, 175, 55, 0.1)',
+        }
       },
     },
   },

@@ -3,33 +3,28 @@ import ContactInfo from '../components/ContactInfo';
 import { SOCIAL_LINKS } from '../constants';
 
 const Contact = () => {
-  // Direct Google Maps link to your restaurant
+  // Direct Google Maps link
   const mapsLink = "https://www.google.com/maps/place/Punjabi+Tadka/@35.8934938,14.4859565,17z/data=!3m1!4b1!4m6!3m5!1s0x130e5be4cb003895:0xc262eb0e32b761ce!8m2!3d35.8934895!4d14.4885314!16s%2Fg%2F11jzwr_zty";
   
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-surface">
       {/* Contact Hero Section */}
-      <div className="relative py-24">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url("/assets/images/dishes/dish8.png")',
-          }}
-        >
-          <div className="absolute inset-0 bg-black/80"></div>
+      <div className="relative py-24 bg-gradient-yellow">
+        <div className="absolute inset-0">
+          <div className="pattern-dots" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-large relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-text mb-6">
               Contact Us
             </h1>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Have questions or want to make a reservation? We&apos;re here to help!
+            <p className="text-text-light text-lg max-w-2xl mx-auto">
+              Have questions or want to make a reservation? We're here to help!
             </p>
           </motion.div>
 
@@ -44,7 +39,7 @@ const Contact = () => {
               transition={{ delay: 0.2 }}
               className="text-center mb-8"
             >
-              <h2 className="text-2xl font-bold text-primary">
+              <h2 className="text-2xl font-bold text-text">
                 Order Online
               </h2>
             </motion.div>
@@ -59,37 +54,40 @@ const Contact = () => {
                 href={SOCIAL_LINKS.BOLT}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[280px] h-[72px] transition-transform hover:scale-105 duration-300"
+                className="order-button order-button-primary group"
               >
                 <img 
                   src="/assets/Button1.png" 
                   alt="Order from Bolt Food"
-                  className="w-full h-full object-contain"
+                  className="h-12 w-auto transform transition-transform 
+                           duration-300 group-hover:scale-105"
                 />
               </a>
               <a 
                 href={SOCIAL_LINKS.WOLT}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[280px] h-[72px] transition-transform hover:scale-105 duration-300"
+                className="order-button order-button-secondary group"
               >
                 <img 
                   src="/assets/Button2.png" 
                   alt="Order from Wolt"
-                  className="w-full h-full object-contain"
+                  className="h-12 w-auto transform transition-transform 
+                           duration-300 group-hover:scale-105"
                 />
               </a>
             </motion.div>
           </div>
 
-          {/* Map Section with Link */}
+          {/* Map Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
             className="mt-16"
           >
-            <div className="relative rounded-lg overflow-hidden shadow-lg border border-primary/20">
+            <div className="relative rounded-2xl overflow-hidden 
+                         shadow-card border border-primary/20">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.8842510543886!2d14.485956476954631!3d35.89349377941521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5be4cb003895%3A0xc262eb0e32b761ce!2sPunjabi%20Tadka!5e0!3m2!1sen!2smt!4v1704303912248!5m2!1sen!2smt"
                 width="100%"
@@ -98,7 +96,7 @@ const Contact = () => {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-lg grayscale hover:grayscale-0 transition-all duration-500"
+                className="grayscale hover:grayscale-0 transition-all duration-500"
                 title="Punjabi Tadka Malta Location"
               />
             </div>
@@ -109,7 +107,8 @@ const Contact = () => {
                 href={mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors duration-300 text-lg"
+                className="inline-flex items-center gap-2 text-text 
+                         hover:text-primary transition-colors duration-300 text-lg"
               >
                 <span>Get Directions</span>
                 <svg 
