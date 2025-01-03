@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background with overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: 'url("/src/assets/images/dishes/dish1.png")' }}
+        style={{ backgroundImage: 'url("/public/assets/images/dishes/dish1.png")' }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80 backdrop-blur-sm"></div>
       </div>
@@ -39,7 +39,7 @@ const Hero = () => {
               className="w-[280px] h-[72px] transition-transform hover:scale-105 duration-300"
             >
               <img 
-                src="/src/assets/Button1.png" 
+                src="/public/assets/Button1.png" 
                 alt="Order from Bolt Food"
                 className="w-full h-full object-contain"
               />
@@ -51,7 +51,7 @@ const Hero = () => {
               className="w-[280px] h-[72px] transition-transform hover:scale-105 duration-300"
             >
               <img 
-                src="/src/assets/Button2.png" 
+                src="/public/assets/Button2.png" 
                 alt="Order from Wolt"
                 className="w-full h-full object-contain"
               />

@@ -13,7 +13,7 @@ const Contact = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url("/src/assets/images/dishes/dish8.png")',
+            backgroundImage: 'url("/public/assets/images/dishes/dish8.png")',
           }}
         >
           <div className="absolute inset-0 bg-black/80"></div>
@@ -29,7 +29,7 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Have questions or want to make a reservation? We're here to help!
+              Have questions or want to make a reservation? We&apos;re here to help!
             </p>
           </motion.div>
 
@@ -62,7 +62,7 @@ const Contact = () => {
                 className="w-[280px] h-[72px] transition-transform hover:scale-105 duration-300"
               >
                 <img 
-                  src="/src/assets/Button1.png" 
+                  src="/public/assets/Button1.png" 
                   alt="Order from Bolt Food"
                   className="w-full h-full object-contain"
                 />
@@ -74,7 +74,7 @@ const Contact = () => {
                 className="w-[280px] h-[72px] transition-transform hover:scale-105 duration-300"
               >
                 <img 
-                  src="/src/assets/Button2.png" 
+                  src="/public/assets/Button2.png" 
                   alt="Order from Wolt"
                   className="w-full h-full object-contain"
                 />

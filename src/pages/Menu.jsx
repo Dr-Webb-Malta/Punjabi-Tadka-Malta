@@ -33,7 +33,7 @@ const Menu = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: 'url("/src/assets/images/background/Menuoverlay.png")',
+            backgroundImage: 'url("/public/assets/images/background/Menuoverlay.png")',
           }}
         >
           <div className="absolute inset-0 bg-black/90"></div>

@@ -29,7 +29,7 @@ const Footer = () => {
           >
             <Link to="/" className="group mb-6 block">
               <img
-                src="/src/assets/images/logo/Logo.png"
+                src="/public/assets/images/logo/Logo.png"
                 alt={RESTAURANT_NAME}
                 className="h-24 w-auto transition-transform duration-300 group-hover:scale-105"
               />

@@ -64,7 +64,7 @@ const Home = () => {
             >
               <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
                 <img 
-                  src="/src/assets/images/dishes/dish2.png" 
+                  src="/public/assets/images/dishes/dish2.png" 
                   alt="Authentic Flavors"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -87,7 +87,7 @@ const Home = () => {
             >
               <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
                 <img 
-                  src="/src/assets/images/dishes/dish3.png" 
+                  src="/public/assets/images/dishes/dish3.png" 
                   alt="Fresh Ingredients"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -110,7 +110,7 @@ const Home = () => {
             >
               <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
                 <img 
-                  src="/src/assets/images/dishes/dish4.png" 
+                  src="/public/assets/images/dishes/dish4.png" 
                   alt="Expert Chefs"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

@@ -7,28 +7,28 @@ const Gallery = () => {
   const dishes = [
     { 
       id: 1, 
-      src: '/src/assets/images/dishes/dish2.png', 
+      src: '/public/assets/images/dishes/dish2.png', 
       alt: 'Chicken Vindaloo', 
       category: 'Main Course',
       description: 'Boneless  tandoori chicken cooked in vindaloo spicy sauce'
     },
     { 
       id: 2, 
-      src: '/src/assets/images/dishes/dish3.png', 
+      src: '/public/assets/images/dishes/dish3.png', 
       alt: 'Mixed Vegetable', 
       category: 'Main Veg',
       description: 'All mixed vegetables cooked in Indian spices'
     },
     { 
       id: 3, 
-      src: '/src/assets/images/dishes/dish4.png', 
+      src: '/public/assets/images/dishes/dish4.png', 
       alt: 'Dal Tadka', 
       category: 'Lentils',
       description: 'Yellow lentils cooked in all purpose gravy'
     },
     { 
       id: 4, 
-      src: '/src/assets/images/dishes/dish5.png', 
+      src: '/public/assets/images/dishes/dish5.png', 
       alt: 'Tawa Chicken', 
       category: 'Non-Veg',
       description: 'Marinated chicken sauteed with cubed onion and capsicum with mild gravy'
