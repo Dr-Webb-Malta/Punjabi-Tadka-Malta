@@ -110,13 +110,35 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row justify-between items-center"
+            className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
           >
-            <p className="text-sm text-white/60">
-              &copy; {new Date().getFullYear()} {RESTAURANT_NAME}. All rights reserved.
-            </p>
-            <div className="mt-4 md:mt-0 flex items-center space-x-2 text-sm text-white/60">
-              <span>Designed by</span>
+            {/* Copyright */}
+            <div className="md:w-1/3 text-center md:text-left">
+              <p className="text-sm text-white/60">
+                &copy; {new Date().getFullYear()} {RESTAURANT_NAME}. All rights reserved.
+              </p>
+            </div>
+
+            {/* Policy Links */}
+            <div className="md:w-1/3 flex justify-center space-x-4">
+              <Link 
+                to="/privacy-policy" 
+                className="text-xs text-white/60 hover:text-primary transition-colors duration-300"
+              >
+                Privacy Policy
+              </Link>
+              <span className="text-white/60">•</span>
+              <Link 
+                to="/terms-and-conditions" 
+                className="text-xs text-white/60 hover:text-primary transition-colors duration-300"
+              >
+                Terms & Conditions
+              </Link>
+            </div>
+
+            {/* Designed By */}
+            <div className="md:w-1/3 flex items-center justify-center md:justify-end space-x-2">
+              <span className="text-sm text-white/60">Designed by</span>
               <a 
                 href="https://www.umanavapti.com" 
                 target="_blank" 

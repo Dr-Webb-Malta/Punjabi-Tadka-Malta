@@ -5,49 +5,70 @@ import { useRef } from 'react';
 const Hero = () => {
   const ref = useRef(null);
   const { scrollY } = useScroll();
-  
-  // Transform values for parallax effect
   const backgroundY = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   
   return (
-    <div ref={ref} className="relative min-h-screen w-full">
+    <div ref={ref} className="relative h-screen w-full overflow-hidden">
       {/* Background with blur and parallax effect */}
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-0"
       >
         <div 
-          className="absolute inset-0 bg-center bg-cover bg-no-repeat backdrop-blur-[15px]"
+          className="absolute inset-0 bg-center bg-cover bg-no-repeat backdrop-blur-xl"
           style={{ 
             backgroundImage: 'url("/assets/images/dishes/dish1.png")',
-            transform: 'scale(1.1)' // Slightly larger to prevent white edges during parallax
+            transform: 'scale(1.1)',
+            filter: 'blur(3px)'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-surface"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/50"></div>
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-screen">
+      <div className="relative h-full flex flex-col items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           style={{ opacity }}
-          className="text-center w-full max-w-4xl mx-auto"
+          className="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
+          >
             Authentic Punjabi Cuisine
-            <span className="block text-accent-yellow mt-2">in Malta</span>
-          </h1>
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="block text-accent-yellow mt-2"
+            >
+              in Malta
+            </motion.span>
+          </motion.h1>
           
-          <p className="text-lg sm:text-xl text-white/90 mb-12">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
+            className="text-lg sm:text-xl text-white/90 mb-12 max-w-3xl mx-auto"
+          >
             A Flavorful Journey Awaits - Discover the authentic taste of Punjab with dishes 
             crafted from family recipes, fresh ingredients, and a passion for perfection.
-          </p>
+          </motion.p>
 
           {/* Order Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
+            className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16"
+          >
             <a 
               href={SOCIAL_LINKS.BOLT}
               target="_blank"
@@ -78,16 +99,16 @@ const Hero = () => {
                          group-hover:scale-105"
               />
             </a>
-          </div>
+          </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Centered Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
+          transition={{ duration: 0.3, delay: 0.8 }}
           style={{ opacity }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-10 w-full flex flex-col items-center"
         >
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
             <motion.div
@@ -99,8 +120,8 @@ const Hero = () => {
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2 }}
-            className="text-white/70 text-sm mt-2 text-center"
+            transition={{ duration: 0.3, delay: 0.9 }}
+            className="text-white/70 text-sm mt-2"
           >
             Scroll to Explore
           </motion.p>

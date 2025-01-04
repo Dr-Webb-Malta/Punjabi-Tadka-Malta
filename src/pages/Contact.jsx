@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import ContactInfo from '../components/ContactInfo';
 import { SOCIAL_LINKS } from '../constants';
+import SEO from '../components/SEO';
 
 const Contact = () => {
   // Direct Google Maps link
@@ -8,6 +9,7 @@ const Contact = () => {
   
   return (
     <div className="min-h-screen bg-white">
+      <SEO page="contact" />
       {/* Contact Hero Section */}
       <div className="relative py-24 bg-gradient-to-b from-primary/90 to-primary/10">
         <div className="absolute inset-0">
@@ -24,7 +26,7 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-white/90 text-lg max-w-2xl mx-auto">
-              Have questions or want to make a reservation? We&apos;re here to help!
+              Have questions or want to make a reservation? We're here to help!
             </p>
           </motion.div>
 
@@ -92,7 +94,8 @@ const Contact = () => {
           >
             <div className="relative rounded-2xl overflow-hidden 
                          shadow-card hover:shadow-orange-hover transition-all duration-300
-                         border border-primary/10">
+                         border border-primary/10"
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.8842510543886!2d14.485956476954631!3d35.89349377941521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5be4cb003895%3A0xc262eb0e32b761ce!2sPunjabi%20Tadka!5e0!3m2!1sen!2smt!4v1704303912248!5m2!1sen!2smt"
                 width="100%"

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { menuData } from '../data/menuData';
+import SEO from '../components/SEO';
 
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -10,21 +11,25 @@ const Menu = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className="menu-item-reveal group bg-white hover:bg-surface-tint rounded-xl p-6 
-                transition-all duration-300 shadow-card hover:shadow-orange-hover card-hover"
+      className="group cursor-pointer bg-white hover:bg-secondary rounded-xl p-6 
+                transition-all duration-300 shadow-sm hover:shadow-lg"
     >
-      <div className="flex justify-between items-start gap-4">
-        <div className="flex-1">
-          <h4 className="text-lg font-medium text-text group-hover:text-primary 
-                      transition-colors">
+      <div className="flex justify-between items-start">
+        <div>
+          <h4 className="text-lg font-medium text-text group-hover:text-white 
+                       transition-colors duration-300">
             {item.name}
           </h4>
-          <p className="mt-1 text-sm text-text-light">Traditional Punjabi Style</p>
+          <p className="mt-1 text-sm text-text-light group-hover:text-white/80 
+                     transition-colors duration-300">
+            Traditional Punjabi Style
+          </p>
         </div>
-        <div className="text-lg font-semibold text-primary px-4 py-2 rounded-lg 
-                     bg-primary/10 group-hover:bg-primary/20 transition-colors
-                     hover-float">
-          {item.price}
+        <div className="px-4 py-2 rounded-lg bg-primary/5 group-hover:bg-white/10 
+                     transition-colors duration-300">
+          <span className="text-lg font-semibold text-primary group-hover:text-white">
+            {item.price}
+          </span>
         </div>
       </div>
     </motion.div>
@@ -43,6 +48,7 @@ const Menu = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO page="menu" />
       {/* Menu Hero Section */}
       <div className="relative py-24 bg-gradient-to-b from-primary/90 to-primary/10">
         <div className="absolute inset-0">

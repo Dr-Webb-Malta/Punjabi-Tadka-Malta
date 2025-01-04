@@ -3,6 +3,7 @@ import Gallery from '../components/Gallery';
 import AboutSection from '../components/AboutSection';
 import MenuSection from '../components/MenuSection';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const Home = () => {
   // Featured dishes data
@@ -15,6 +16,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO page="home" />
       <Hero />
       <AboutSection />
       
