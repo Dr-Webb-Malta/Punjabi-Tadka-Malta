@@ -7,11 +7,11 @@ const Contact = () => {
   const mapsLink = "https://www.google.com/maps/place/Punjabi+Tadka/@35.8934938,14.4859565,17z/data=!3m1!4b1!4m6!3m5!1s0x130e5be4cb003895:0xc262eb0e32b761ce!8m2!3d35.8934895!4d14.4885314!16s%2Fg%2F11jzwr_zty";
   
   return (
-    <div className="min-h-screen bg-surface">
+    <div className="min-h-screen bg-white">
       {/* Contact Hero Section */}
-      <div className="relative py-24 bg-gradient-yellow">
+      <div className="relative py-24 bg-gradient-to-b from-primary/90 to-primary/10">
         <div className="absolute inset-0">
-          <div className="pattern-dots" />
+          <div className="pattern-dots opacity-5" />
         </div>
 
         <div className="container-large relative z-10">
@@ -20,11 +20,11 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-text mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Contact Us
             </h1>
-            <p className="text-text-light text-lg max-w-2xl mx-auto">
-              Have questions or want to make a reservation? We're here to help!
+            <p className="text-white/90 text-lg max-w-2xl mx-auto">
+              Have questions or want to make a reservation? We&apos;re here to help!
             </p>
           </motion.div>
 
@@ -39,7 +39,7 @@ const Contact = () => {
               transition={{ delay: 0.2 }}
               className="text-center mb-8"
             >
-              <h2 className="text-2xl font-bold text-text">
+              <h2 className="text-2xl font-bold text-white">
                 Order Online
               </h2>
             </motion.div>
@@ -54,26 +54,30 @@ const Contact = () => {
                 href={SOCIAL_LINKS.BOLT}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="order-button order-button-primary group"
+                className="group bg-primary hover:bg-primary-dark rounded-xl p-2 
+                         transition-all duration-300 hover:-translate-y-1
+                         shadow-orange hover:shadow-orange-hover"
               >
                 <img 
                   src="/assets/Button1.png" 
                   alt="Order from Bolt Food"
-                  className="h-12 w-auto transform transition-transform 
-                           duration-300 group-hover:scale-105"
+                  className="h-12 w-auto transform transition-transform duration-300 
+                           group-hover:scale-105"
                 />
               </a>
               <a 
                 href={SOCIAL_LINKS.WOLT}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="order-button order-button-secondary group"
+                className="group bg-secondary hover:bg-secondary-dark rounded-xl p-2 
+                         transition-all duration-300 hover:-translate-y-1
+                         shadow-green hover:shadow-green-hover"
               >
                 <img 
                   src="/assets/Button2.png" 
                   alt="Order from Wolt"
-                  className="h-12 w-auto transform transition-transform 
-                           duration-300 group-hover:scale-105"
+                  className="h-12 w-auto transform transition-transform duration-300 
+                           group-hover:scale-105"
                 />
               </a>
             </motion.div>
@@ -87,7 +91,8 @@ const Contact = () => {
             className="mt-16"
           >
             <div className="relative rounded-2xl overflow-hidden 
-                         shadow-card border border-primary/20">
+                         shadow-card hover:shadow-orange-hover transition-all duration-300
+                         border border-primary/10">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.8842510543886!2d14.485956476954631!3d35.89349377941521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e5be4cb003895%3A0xc262eb0e32b761ce!2sPunjabi%20Tadka!5e0!3m2!1sen!2smt!4v1704303912248!5m2!1sen!2smt"
                 width="100%"
@@ -108,11 +113,12 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-text 
-                         hover:text-primary transition-colors duration-300 text-lg"
+                         hover:text-primary transition-colors duration-300 text-lg
+                         group"
               >
                 <span>Get Directions</span>
                 <svg 
-                  className="w-5 h-5" 
+                  className="w-5 h-5 transform transition-transform group-hover:translate-x-1" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"

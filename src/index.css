@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --primary: #f8d636;
-  --secondary: #6A1B9A;
-  --text: #2D3436;
+  --primary: #ff671f;
+  --secondary: #006341;
+  --text: #1A1A1A;
 }
 
 /* Custom scrollbar */
@@ -38,9 +38,9 @@
 @layer components {
   /* Modern Buttons */
   .btn-primary {
-    @apply px-8 py-4 bg-primary text-text rounded-xl
+    @apply px-8 py-4 bg-primary text-white rounded-xl
            font-medium tracking-wide uppercase text-sm
-           shadow-yellow hover:shadow-yellow-hover
+           shadow-orange hover:shadow-orange-hover
            transform transition-all duration-300
            hover:-translate-y-0.5 hover:bg-primary-dark;
   }
@@ -48,24 +48,24 @@
   .btn-secondary {
     @apply px-8 py-4 bg-secondary text-white rounded-xl
            font-medium tracking-wide uppercase text-sm
-           shadow-purple hover:shadow-purple-hover
+           shadow-green hover:shadow-green-hover
            transform transition-all duration-300
            hover:-translate-y-0.5;
   }
 
   .btn-outline {
-    @apply px-8 py-4 border-2 border-primary text-text rounded-xl
+    @apply px-8 py-4 border-2 border-primary text-primary rounded-xl
            font-medium tracking-wide uppercase text-sm
-           transition-all duration-300 hover:bg-primary-light;
+           transition-all duration-300 hover:bg-primary hover:text-white;
   }
 
   /* Section Layouts */
   .section-bright {
-    @apply bg-gradient-yellow py-24 relative overflow-hidden;
+    @apply bg-gradient-orange py-24 relative overflow-hidden;
   }
 
-  .section-purple {
-    @apply bg-gradient-purple py-24 relative overflow-hidden;
+  .section-green {
+    @apply bg-gradient-green py-24 relative overflow-hidden;
   }
 
   .section-white {
@@ -73,85 +73,40 @@
   }
 
   .section-tint {
-    @apply bg-surface-light py-24 relative overflow-hidden;
+    @apply bg-surface-tint py-24 relative overflow-hidden;
   }
 
-  /* Cards */
+  /* Navigation */
+  .nav-link {
+    @apply text-white hover:text-accent-yellow transition-colors duration-300
+           relative after:absolute after:bottom-0 after:left-0
+           after:w-0 after:h-0.5 after:bg-accent-yellow
+           after:transition-all hover:after:w-full;
+  }
+
+  /* Header */
+  .navbar-fixed {
+    @apply bg-primary/95 backdrop-blur-sm shadow-orange text-white;
+  }
+
+  /* Menu Categories */
+  .menu-category-tab {
+    @apply px-6 py-3 rounded-full text-text
+           transition-all duration-300
+           hover:bg-primary hover:text-white
+           border-2 border-transparent;
+  }
+
+  .menu-category-tab.active {
+    @apply bg-primary text-white border-primary-dark
+           shadow-orange;
+  }
+
+  /* Cards and Sections */
   .feature-card {
-    @apply bg-surface p-8 rounded-2xl shadow-card
-           hover:shadow-card-hover transition-all duration-300
-           transform hover:-translate-y-1;
-  }
-
-  .menu-card {
-    @apply bg-surface p-6 rounded-xl shadow-card
-           hover:shadow-card-hover transition-all duration-300
-           border border-primary/10 hover:border-primary/30;
-  }
-
-  /* Text Styles */
-  .heading-hero {
-    @apply text-4xl md:text-5xl lg:text-hero font-bold mb-6;
-  }
-
-  .heading-section {
-    @apply text-3xl md:text-4xl font-bold mb-6;
-  }
-
-  .text-body {
-    @apply text-text-light text-lg leading-relaxed;
-  }
-
-  /* Grid Layouts */
-  .grid-features {
-    @apply grid grid-cols-1 md:grid-cols-3 gap-8;
-  }
-
-  .grid-menu {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
-  }
-
-  .grid-gallery {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
-  }
-
-  /* Images */
-  .img-hover {
-    @apply transition-transform duration-500 hover:scale-105;
-  }
-
-  /* Overlays */
-  .overlay-gradient {
-    @apply absolute inset-0 opacity-60 pointer-events-none;
-    @apply bg-gradient-to-br from-primary/20 to-secondary/20;
-  }
-
-  .overlay-dots {
-    @apply absolute inset-0 opacity-10 pointer-events-none;
-    background-image: radial-gradient(#2D3436 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.animate-fade {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-/* Responsive Design */
-@screen md {
-  .container {
-    @apply px-6;
-  }
-}
-
-@screen lg {
-  .container {
-    @apply px-8;
+    @apply bg-white p-8 rounded-2xl
+           shadow-card hover:shadow-orange-hover
+           border border-primary/10 hover:border-primary/30
+           transition-all duration-300;
   }
 }

@@ -36,9 +36,9 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="py-24 bg-surface-light relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 opacity-5">
         <div className="pattern-dots" />
       </div>
 
@@ -49,7 +49,7 @@ const Gallery = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
             Culinary Masterpieces
           </h2>
           <p className="text-text-light max-w-2xl mx-auto">
@@ -68,7 +68,8 @@ const Gallery = () => {
               transition={{ delay: index * 0.2 }}
               onClick={() => setSelectedImage(dish)}
               className="group cursor-pointer relative aspect-square 
-                       overflow-hidden rounded-2xl bg-surface"
+                       overflow-hidden rounded-2xl bg-white shadow-card
+                       hover:shadow-orange-hover transition-all duration-300"
             >
               {/* Image */}
               <img
@@ -81,20 +82,20 @@ const Gallery = () => {
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t 
-                            from-primary/80 via-primary/40 to-transparent 
+                            from-primary/90 via-primary/40 to-transparent 
                             opacity-0 group-hover:opacity-100 
                             transition-opacity duration-500">
                 <div className="absolute bottom-0 left-0 right-0 p-6 
                               transform translate-y-4 
                               group-hover:translate-y-0 
                               transition-transform duration-500">
-                  <span className="block text-text text-sm font-medium mb-2">
+                  <span className="block text-white text-sm font-medium mb-2">
                     {dish.category}
                   </span>
-                  <h3 className="text-text text-lg font-semibold mb-1">
+                  <h3 className="text-white text-lg font-semibold mb-1">
                     {dish.alt}
                   </h3>
-                  <p className="text-text-light text-sm opacity-0 
+                  <p className="text-white/90 text-sm opacity-0 
                               group-hover:opacity-100 
                               transition-opacity duration-500 delay-100">
                     {dish.description}
@@ -115,13 +116,13 @@ const Gallery = () => {
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
             className="fixed inset-0 z-50 flex items-center justify-center 
-                     p-4 bg-text/50 backdrop-blur-sm"
+                     p-4 bg-black/50 backdrop-blur-sm"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="relative max-w-4xl w-full bg-surface rounded-2xl 
+              className="relative max-w-4xl w-full bg-white rounded-2xl 
                        overflow-hidden shadow-card"
               onClick={e => e.stopPropagation()}
             >
@@ -155,24 +156,6 @@ const Gallery = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Mobile Scroll Indicator */}
-      <div className="md:hidden mt-8 text-center">
-        <p className="text-text-light text-sm">
-          Swipe to explore more dishes
-        </p>
-        <motion.div
-          animate={{ x: [-10, 10, -10] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="mt-2"
-        >
-          <svg className="w-6 h-6 text-primary mx-auto" 
-               fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" 
-                  strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </motion.div>
-      </div>
     </section>
   );
 };

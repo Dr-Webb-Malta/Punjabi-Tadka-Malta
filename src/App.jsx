@@ -5,7 +5,7 @@ import './styles/components.css';
 
 function App() {
   return (
-    <div className="app bg-surface min-h-screen">
+    <div className="w-full min-h-screen bg-white overflow-x-hidden">
       <RouterProvider router={router} />
     </div>
   );

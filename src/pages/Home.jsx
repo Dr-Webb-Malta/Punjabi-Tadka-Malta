@@ -14,18 +14,18 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white">
       <Hero />
       <AboutSection />
       
       {/* Featured Dishes Section */}
-      <section className="py-16 bg-black">
+      <section className="py-16 bg-surface-tint">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-center text-primary mb-12"
+            className="text-3xl font-bold text-center text-secondary mb-12"
           >
             Our Signature Dishes
           </motion.h2>
@@ -34,7 +34,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-secondary relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="h-full w-full" 
@@ -49,7 +49,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-center text-primary mb-16"
+            className="text-3xl font-bold text-center text-text mb-16"
           >
             Why Choose Us
           </motion.h2>
@@ -60,18 +60,24 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="group p-8 rounded-lg bg-black/30 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-all duration-500"
+              className="group p-8 rounded-lg bg-white/50 backdrop-blur-sm 
+                       border border-primary/10 hover:border-primary/30 
+                       shadow-card hover:shadow-orange-hover 
+                       transition-all duration-500"
             >
               <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
                 <img 
                   src="/assets/images/dishes/dish2.png" 
                   alt="Authentic Flavors"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform 
+                           duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               </div>
-              <h3 className="text-xl font-semibold text-primary mb-4 text-center">Authentic Flavors</h3>
-              <p className="text-gray-400 text-center leading-relaxed">
+              <h3 className="text-xl font-semibold text-primary mb-4 text-center">
+                Authentic Flavors
+              </h3>
+              <p className="text-text-light text-center leading-relaxed">
                 Traditional Punjabi recipes passed down through generations, preserving the authentic 
                 taste of North India in every dish.
               </p>
@@ -83,18 +89,24 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="group p-8 rounded-lg bg-black/30 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-all duration-500"
+              className="group p-8 rounded-lg bg-white/50 backdrop-blur-sm 
+                       border border-primary/10 hover:border-primary/30 
+                       shadow-card hover:shadow-orange-hover 
+                       transition-all duration-500"
             >
               <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
                 <img 
                   src="/assets/images/dishes/dish3.png" 
                   alt="Fresh Ingredients"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform 
+                           duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               </div>
-              <h3 className="text-xl font-semibold text-primary mb-4 text-center">Fresh Ingredients</h3>
-              <p className="text-gray-400 text-center leading-relaxed">
+              <h3 className="text-xl font-semibold text-primary mb-4 text-center">
+                Fresh Ingredients
+              </h3>
+              <p className="text-text-light text-center leading-relaxed">
                 Quality ingredients sourced daily, ensuring the finest taste and freshness 
                 in every dish we serve to our valued guests.
               </p>
@@ -106,18 +118,24 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="group p-8 rounded-lg bg-black/30 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-all duration-500"
+              className="group p-8 rounded-lg bg-white/50 backdrop-blur-sm 
+                       border border-primary/10 hover:border-primary/30 
+                       shadow-card hover:shadow-orange-hover 
+                       transition-all duration-500"
             >
               <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
                 <img 
                   src="/assets/images/dishes/dish4.png" 
                   alt="Expert Chefs"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform 
+                           duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               </div>
-              <h3 className="text-xl font-semibold text-primary mb-4 text-center">Expert Chefs</h3>
-              <p className="text-gray-400 text-center leading-relaxed">
+              <h3 className="text-xl font-semibold text-primary mb-4 text-center">
+                Expert Chefs
+              </h3>
+              <p className="text-text-light text-center leading-relaxed">
                 Skilled chefs with years of experience in Indian cuisine, crafting each dish 
                 with expertise and passion.
               </p>

@@ -3,6 +3,23 @@ export const RESTAURANT_ADDRESS = "43 Triq J. Borg, L MSD 1214";
 export const PHONE_NUMBER = "+35621343841";
 export const COMPANY_NAME = "Umanav Apti LTD";
 
+export const COLORS = {
+  primary: '#ff671f',
+  primaryLight: '#ff8244',
+  primaryDark: '#e65a1b',
+  secondary: '#006341',
+  secondaryLight: '#007d52',
+  secondaryDark: '#004d32',
+  accentGreen: '#8fe2b0',
+  accentYellow: '#ffb81c',
+  surface: '#FFFFFF',
+  surfaceLight: '#F8F9FA',
+  surfaceTint: '#ebdab6',
+  text: '#1A1A1A',
+  textLight: '#4A4A4A',
+  textWhite: '#FFFFFF',
+};
+
 export const OPENING_HOURS = {
   Monday: "12 am–11 pm",
   Tuesday: "12–11 pm",

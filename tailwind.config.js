@@ -7,19 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#f8d636',      // Your bright yellow
-        'primary-light': '#FFE57F',
-        'primary-dark': '#E5C118',
-        secondary: '#6A1B9A',    // Rich purple
-        'secondary-light': '#8E24AA',
-        'secondary-dark': '#4A148C',
-        'accent-orange': '#FF9F43',
-        'accent-red': '#FF5252',
+        primary: '#ff671f',      // Vibrant Indian Orange
+        'primary-light': '#ff8244',
+        'primary-dark': '#e65a1b',
+        secondary: '#006341',    // Deep Forest Green
+        'secondary-light': '#007d52',
+        'secondary-dark': '#004d32',
+        'accent-green': '#8fe2b0', // Light Fresh Green
+        'accent-yellow': '#ffb81c', // Warm Yellow
         'surface': '#FFFFFF',    // Pure white
         'surface-light': '#F8F9FA',
-        'surface-tint': '#FFF8E1',
-        'text': '#2D3436',       // Main text
-        'text-light': '#636E72', // Secondary text
+        'surface-tint': '#ebdab6', // Warm Beige
+        'text': '#1A1A1A',       // Near black for better contrast
+        'text-light': '#4A4A4A', // Darker gray for better readability
         'text-white': '#FFFFFF',
       },
       fontFamily: {
@@ -31,18 +31,18 @@ export default {
         'hero': ['4.5rem', { lineHeight: '1.1' }],
       },
       backgroundImage: {
-        'gradient-yellow': 'linear-gradient(135deg, #f8d636 0%, #FFE57F 100%)',
-        'gradient-purple': 'linear-gradient(135deg, #6A1B9A 0%, #8E24AA 100%)',
-        'gradient-orange': 'linear-gradient(135deg, #FF9F43 0%, #FFBE76 100%)',
-        'gradient-bright': 'linear-gradient(45deg, #f8d636 0%, #FF9F43 100%)',
+        'gradient-orange': 'linear-gradient(135deg, #ff671f 0%, #ff8244 100%)',
+        'gradient-green': 'linear-gradient(135deg, #006341 0%, #007d52 100%)',
+        'gradient-warm': 'linear-gradient(135deg, #ff671f 0%, #ffb81c 100%)',
+        'gradient-natural': 'linear-gradient(135deg, #006341 0%, #8fe2b0 100%)',
       },
       boxShadow: {
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
         'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-        'yellow': '0 4px 6px -1px rgba(248, 214, 54, 0.3)',
-        'yellow-hover': '0 8px 12px -3px rgba(248, 214, 54, 0.4)',
-        'purple': '0 4px 6px -1px rgba(106, 27, 154, 0.3)',
-        'purple-hover': '0 8px 12px -3px rgba(106, 27, 154, 0.4)',
+        'orange': '0 4px 6px -1px rgba(255, 103, 31, 0.3)',
+        'orange-hover': '0 8px 12px -3px rgba(255, 103, 31, 0.4)',
+        'green': '0 4px 6px -1px rgba(0, 99, 65, 0.3)',
+        'green-hover': '0 8px 12px -3px rgba(0, 99, 65, 0.4)',
       },
       borderRadius: {
         'xl': '1rem',

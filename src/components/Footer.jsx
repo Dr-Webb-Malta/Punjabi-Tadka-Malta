@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { FaInstagram, FaTiktok, FaTripadvisor } from 'react-icons/fa';
 import { 
   RESTAURANT_NAME, 
   OPENING_HOURS, 
@@ -9,9 +10,9 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-purple relative">
+    <footer className="bg-secondary relative">
       {/* Pattern Overlay */}
-      <div className="absolute inset-0 pattern-dots opacity-10" />
+      <div className="absolute inset-0 pattern-dots opacity-5" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
@@ -30,9 +31,21 @@ const Footer = () => {
               />
             </Link>
             <h3 className="font-display text-2xl text-white mb-4">{RESTAURANT_NAME}</h3>
-            <p className="text-white/80 text-center md:text-left">
+            <p className="text-white/80 text-center md:text-left mb-6">
               Experience authentic Punjabi flavors in the heart of Malta
             </p>
+            {/* Social Icons */}
+            <div className="flex space-x-4">
+              <a href="https://www.instagram.com/punjabitadka_malta/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="h-6 w-6 transition-transform duration-300 hover:scale-110 text-white hover:text-orange-500" />
+              </a>
+              <a href="https://www.tiktok.com/@punjabi.tadka.mal" target="_blank" rel="noopener noreferrer">
+                <FaTiktok className="h-6 w-6 transition-transform duration-300 hover:scale-110 text-white hover:text-orange-500" />  
+              </a>
+              <a href="https://www.tripadvisor.com/Restaurant_Review-g1854775-d25321795-Reviews-Punjabi_Tadka-Msida_Island_of_Malta.html" target="_blank" rel="noopener noreferrer">
+                <FaTripadvisor className="h-6 w-6 transition-transform duration-300 hover:scale-110 text-white hover:text-orange-500" />
+              </a>
+            </div>
           </motion.div>
 
           {/* Hours Section */}

@@ -3,107 +3,106 @@
 @tailwind utilities;
 
 @layer components {
-  /* Navbar */
+  /* ===== Navbar Styles ===== */
   .navbar-fixed {
     @apply fixed top-0 left-0 w-full z-50 transition-all duration-300;
-    @apply bg-surface/95 backdrop-blur-sm shadow-card;
+    @apply bg-white/95 backdrop-blur-sm shadow-card;
   }
 
   .nav-link {
-    @apply text-text hover:text-primary transition-colors duration-300;
-    @apply text-lg font-medium relative;
-    @apply after:absolute after:bottom-0 after:left-0 after:w-0;
-    @apply after:h-0.5 after:bg-primary after:transition-all;
-    @apply hover:after:w-full;
+    @apply text-lg font-medium relative transition-colors duration-300;
+    @apply hover:text-secondary;
   }
 
-  /* Hero Section */
-  .hero-section {
-    @apply relative min-h-screen flex items-center;
-    @apply bg-gradient-yellow;
+  .nav-link.active {
+    @apply text-secondary;
+  }
+
+  /* ===== Hero Section Styles ===== */
+  .hero-background {
+    @apply absolute inset-0 bg-cover bg-center bg-fixed;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  .hero-blur {
+    @apply absolute inset-0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  .hero-gradient {
+    @apply absolute inset-0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 103, 31, 0.9) 0%,
+      rgba(255, 103, 31, 0.7) 50%,
+      rgba(255, 255, 255, 1) 100%
+    );
   }
 
   .hero-content {
-    @apply container mx-auto px-4 py-24 text-center relative z-10;
+    @apply relative z-10 flex flex-col items-center justify-center min-h-screen;
+    @apply px-4 py-24 text-center;
   }
 
   .hero-overlay {
-    @apply absolute inset-0 bg-gradient-to-b from-white/10 to-white/5;
+    @apply absolute inset-0 bg-gradient-to-b;
+    @apply from-primary/90 via-primary/70 to-white;
   }
 
-  /* Feature Section */
-  .feature-grid {
-    @apply grid grid-cols-1 md:grid-cols-3 gap-8;
-  }
-
-  .feature-card {
-    @apply bg-surface p-8 rounded-2xl text-center;
-    @apply shadow-card hover:shadow-card-hover;
-    @apply transform transition-all duration-300;
-    @apply hover:-translate-y-1;
-  }
-
-  .feature-icon {
-    @apply w-16 h-16 mx-auto mb-6;
-    @apply text-primary bg-primary/10 rounded-2xl;
-    @apply flex items-center justify-center;
-  }
-
-  /* Menu Section */
-  .menu-grid {
+  /* ===== Menu Section Styles ===== */
+  .grid-menu {
     @apply grid grid-cols-1 md:grid-cols-2 gap-6;
   }
 
   .menu-item {
-    @apply bg-surface p-6 rounded-xl;
-    @apply shadow-card hover:shadow-card-hover;
+    @apply bg-white p-6 rounded-xl;
+    @apply shadow-card hover:shadow-orange-hover;
     @apply border border-primary/10 hover:border-primary/30;
     @apply transform transition-all duration-300;
     @apply hover:-translate-y-1;
-    @apply flex justify-between items-center;
-  }
-
-  .menu-category-tabs {
-    @apply flex flex-wrap justify-center gap-4 mb-12;
   }
 
   .menu-category-tab {
-    @apply px-6 py-2 rounded-full;
+    @apply px-6 py-3 rounded-full;
     @apply text-text font-medium;
     @apply transition-all duration-300;
-    @apply hover:bg-primary hover:text-text;
+    @apply hover:bg-secondary hover:text-white;
     @apply cursor-pointer;
   }
 
   .menu-category-tab.active {
-    @apply bg-primary text-text;
+    @apply bg-secondary text-white;
   }
 
-  /* Gallery */
+  /* ===== Gallery Styles ===== */
   .gallery-grid {
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
   }
 
   .gallery-item {
     @apply relative overflow-hidden rounded-xl;
-    @apply shadow-card hover:shadow-card-hover;
+    @apply shadow-card hover:shadow-orange-hover;
     @apply transition-all duration-300;
   }
 
   .gallery-overlay {
-    @apply absolute inset-0 bg-gradient-yellow/80;
+    @apply absolute inset-0 bg-gradient-to-t;
+    @apply from-primary/80 via-primary/40 to-transparent;
     @apply opacity-0 group-hover:opacity-90;
     @apply transition-opacity duration-300;
     @apply flex items-center justify-center;
   }
 
-  /* Contact Section */
+  /* ===== Contact Section Styles ===== */
   .contact-section {
-    @apply bg-surface-light py-24;
+    @apply bg-white py-24;
   }
 
   .contact-card {
-    @apply bg-surface p-8 rounded-2xl;
+    @apply bg-white p-8 rounded-2xl;
     @apply shadow-card border border-primary/10;
   }
 
@@ -113,21 +112,7 @@
     @apply transition-all duration-300;
   }
 
-  /* Footer */
-  .footer {
-    @apply bg-secondary text-white py-16;
-  }
-
-  .footer-grid {
-    @apply grid grid-cols-1 md:grid-cols-4 gap-8;
-  }
-
-  .footer-link {
-    @apply text-white/80 hover:text-primary;
-    @apply transition-colors duration-300;
-  }
-
-  /* Order Buttons */
+  /* ===== Button Styles ===== */
   .order-button {
     @apply inline-flex items-center gap-2;
     @apply px-8 py-3 rounded-xl;
@@ -136,245 +121,153 @@
   }
 
   .order-button-primary {
-    @apply bg-primary text-text;
-    @apply shadow-yellow hover:shadow-yellow-hover;
+    @apply bg-primary text-white;
+    @apply shadow-orange hover:shadow-orange-hover;
+    @apply hover:bg-primary-dark;
   }
 
   .order-button-secondary {
     @apply bg-secondary text-white;
-    @apply shadow-purple hover:shadow-purple-hover;
+    @apply shadow-green hover:shadow-green-hover;
+    @apply hover:bg-secondary-dark;
   }
 
-  /* Hours List */
-  .hours-list {
-    @apply space-y-4;
+  /* ===== Footer Styles ===== */
+  .footer {
+    @apply bg-secondary text-white py-16;
   }
 
-  .hours-item {
-    @apply flex justify-between items-center;
-    @apply py-2 border-b border-primary/10;
-  }
-
-  /* Social Links */
-  .social-links {
-    @apply flex items-center space-x-4;
-  }
-
-  .social-link {
-    @apply w-10 h-10 rounded-full;
-    @apply flex items-center justify-center;
-    @apply text-text hover:text-primary;
+  .footer-link {
+    @apply text-white/80 hover:text-primary;
     @apply transition-colors duration-300;
   }
 
-  /* Testimonials */
-  .testimonial-card {
-    @apply bg-surface p-6 rounded-xl;
-    @apply shadow-card hover:shadow-card-hover;
+  /* ===== Section Layouts ===== */
+  .section-bright {
+    @apply bg-gradient-orange py-24 relative overflow-hidden;
+  }
+
+  .section-teal {
+    @apply bg-gradient-green py-24 relative overflow-hidden;
+  }
+
+  .section-white {
+    @apply bg-white py-24 relative overflow-hidden;
+  }
+
+  .section-tint {
+    @apply bg-surface-tint py-24 relative overflow-hidden;
+  }
+
+  /* ===== Card Styles ===== */
+  .feature-card {
+    @apply bg-white p-8 rounded-2xl;
+    @apply shadow-card hover:shadow-orange-hover;
+    @apply border border-primary/10 hover:border-primary/30;
     @apply transform transition-all duration-300;
     @apply hover:-translate-y-1;
   }
 
-  /* CTA Sections */
-  .cta-section {
-    @apply bg-gradient-purple text-white py-16;
+  /* ===== Interactive Elements ===== */
+  .hover-lift {
+    @apply transition-transform duration-300;
+    @apply hover:-translate-y-1;
   }
 
-  /* Modal */
-  .modal-backdrop {
-    @apply fixed inset-0 bg-text/50 backdrop-blur-sm z-50;
-    @apply flex items-center justify-center;
+  .hover-scale {
+    @apply transition-transform duration-300;
+    @apply hover:scale-105;
   }
 
-  .modal-content {
-    @apply bg-surface rounded-xl p-6 max-w-lg w-full mx-4;
-    @apply shadow-card border border-primary/10;
+  /* ===== Background Patterns ===== */
+  .pattern-dots {
+    @apply absolute inset-0 opacity-10;
+    background-image: radial-gradient(#ff671f 1px, transparent 1px);
+    background-size: 20px 20px;
   }
-/* Modal */
-.modal-backdrop {
-  @apply fixed inset-0 bg-text/50 backdrop-blur-sm z-50;
-  @apply flex items-center justify-center;
-}
 
-.modal-content {
-  @apply bg-surface rounded-xl p-6 max-w-lg w-full mx-4;
-  @apply shadow-card border border-primary/10;
-}
-
-/* Additional Utility Components */
-.badge {
-  @apply px-3 py-1 rounded-full text-sm font-medium;
-}
-
-.badge-primary {
-  @apply bg-primary/20 text-text;
-}
-
-.badge-secondary {
-  @apply bg-secondary/20 text-secondary;
-}
-
-/* Alerts */
-.alert {
-  @apply p-4 rounded-xl mb-4;
-}
-
-.alert-success {
-  @apply bg-green-50 text-green-800 border border-green-100;
-}
-
-.alert-warning {
-  @apply bg-primary/10 text-text border border-primary/20;
-}
-
-/* Price Tags */
-.price-tag {
-  @apply font-bold text-lg text-primary;
-  @apply px-3 py-1 rounded-lg bg-primary/10;
-}
-
-/* Background Patterns */
-.pattern-dots {
-  @apply absolute inset-0 opacity-10;
-  background-image: radial-gradient(currentColor 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-.pattern-grid {
-  @apply absolute inset-0 opacity-10;
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, currentColor 1px, transparent 1px),
-                   linear-gradient(to bottom, currentColor 1px, transparent 1px);
-}
-
-/* Hover Effects */
-.hover-lift {
-  @apply transition-transform duration-300;
-  @apply hover:-translate-y-1 hover:shadow-card-hover;
-}
-
-.hover-glow {
-  @apply transition-all duration-300;
-  @apply hover:shadow-yellow;
-}
-
-/* Loading States */
-.loading-skeleton {
-  @apply animate-pulse bg-surface-light rounded;
-}
-
-.loading-spinner {
-  @apply animate-spin w-5 h-5 border-2;
-  @apply border-primary border-t-transparent rounded-full;
-}
-
-/* Special Sections */
-.special-offer {
-  @apply relative overflow-hidden bg-gradient-bright;
-  @apply py-16 px-4 rounded-2xl text-text;
-}
-
-.special-offer-tag {
-  @apply absolute top-4 right-4;
-  @apply bg-secondary text-white px-4 py-1 rounded-full;
-  @apply text-sm font-medium transform rotate-3;
-}
-
-/* Image Treatments */
-.img-rounded {
-  @apply rounded-xl overflow-hidden;
-  @apply transition-transform duration-500;
-  @apply hover:scale-105;
-}
-
-.img-shadow {
-  @apply shadow-card hover:shadow-card-hover;
-  @apply transition-shadow duration-300;
-}
-
-/* Form Elements */
-.form-input {
-  @apply w-full px-4 py-3 rounded-xl;
-  @apply bg-surface border border-primary/20;
-  @apply focus:border-primary focus:ring-2 focus:ring-primary/20;
-  @apply text-text placeholder-text-light/60;
-  @apply transition-all duration-300;
-}
-
-.form-label {
-  @apply block text-sm font-medium text-text mb-2;
-}
-
-.form-error {
-  @apply text-accent-red text-sm mt-1;
-}
-
-/* Navigation Elements */
-.breadcrumb {
-  @apply flex items-center space-x-2 text-sm text-text-light;
-}
-
-.breadcrumb-separator {
-  @apply text-primary;
-}
-
-/* Stats */
-.stat-card {
-  @apply bg-surface p-6 rounded-xl;
-  @apply shadow-card border border-primary/10;
-  @apply text-center;
-}
-
-.stat-number {
-  @apply text-3xl font-bold text-primary mb-2;
-}
-
-.stat-label {
-  @apply text-text-light;
-}
-
-/* Dividers */
-.divider {
-  @apply h-px w-full my-8;
-  @apply bg-gradient-to-r from-transparent via-primary/30 to-transparent;
-}
-
-.divider-vertical {
-  @apply w-px h-full mx-4;
-  @apply bg-gradient-to-b from-transparent via-primary/30 to-transparent;
-}
-
-/* Scrollbar for containers */
-.custom-scrollbar {
-  @apply scrollbar-thin scrollbar-thumb-primary scrollbar-track-surface-light;
-}
-
-/* Responsive Containers */
-.container-small {
-  @apply max-w-3xl mx-auto px-4;
-}
-
-.container-large {
-  @apply max-w-7xl mx-auto px-4;
-}
-
-/* Print Styles */
-@media print {
-  .no-print {
-    @apply hidden;
+  .pattern-grid {
+    @apply absolute inset-0 opacity-10;
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, currentColor 1px, transparent 1px),
+                     linear-gradient(to bottom, currentColor 1px, transparent 1px);
   }
-  .print-only {
-    @apply block;
+
+  /* ===== Container Utilities ===== */
+  .container-small {
+    @apply max-w-3xl mx-auto px-4;
   }
-}
 
-/* Accessibility */
-.sr-only {
-  @apply absolute w-px h-px p-0 -m-px overflow-hidden;
-  @apply whitespace-nowrap border-0;
-}
+  .container-large {
+    @apply max-w-7xl mx-auto px-4;
+  }
 
-.focus-outline {
-  @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
-}
+  /* ===== Loading States ===== */
+  .loading-skeleton {
+    @apply animate-pulse bg-surface-light rounded;
+  }
+
+  .loading-spinner {
+    @apply animate-spin w-5 h-5 border-2;
+    @apply border-primary border-t-transparent rounded-full;
+  }
+
+  /* ===== Form Elements ===== */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl;
+    @apply bg-white border border-primary/20;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/20;
+    @apply text-text placeholder-text-light/60;
+    @apply transition-all duration-300;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-text mb-2;
+  }
+
+  /* ===== Price Tags ===== */
+  .price-tag {
+    @apply font-bold text-lg text-primary;
+    @apply px-4 py-2 rounded-lg bg-primary/10;
+    @apply transition-colors duration-300;
+  }
+
+  /* ===== Dividers ===== */
+  .divider {
+    @apply h-px w-full my-8;
+    @apply bg-gradient-to-r from-transparent via-primary/30 to-transparent;
+  }
+
+  .divider-vertical {
+    @apply w-px h-full mx-4;
+    @apply bg-gradient-to-b from-transparent via-primary/30 to-transparent;
+  }
+
+  /* ===== Accessibility ===== */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden;
+    @apply whitespace-nowrap border-0;
+  }
+
+  .focus-outline {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
+  }
+
+  /* ===== Mobile Menu ===== */
+  .mobile-menu-backdrop {
+    @apply fixed inset-0 bg-white z-40;
+    @apply transition-all duration-300;
+  }
+
+  .mobile-menu-item {
+    @apply text-3xl font-light tracking-wider;
+    @apply transition-colors duration-300;
+  }
+
+  /* ===== Image Treatments ===== */
+  .img-backdrop {
+    @apply relative overflow-hidden;
+    @apply after:absolute after:inset-0;
+    @apply after:bg-gradient-to-t after:from-black/50 after:to-transparent;
+  }
 }
