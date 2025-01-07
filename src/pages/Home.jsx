@@ -8,10 +8,10 @@ import SEO from '../components/SEO';
 const Home = () => {
   // Featured dishes data
   const featured = [
-    { name: "Butter Chicken", price: "€15.95" },
-    { name: "Palak Paneer", price: "€12.95" },
-    { name: "Chicken Biryani", price: "€14.95" },
-    { name: "Dal Makhani", price: "€11.95" }
+    { name: "Butter Chicken", price: "€11.95" },
+    { name: "Chicken Biryani", price: "€11.95" },
+    { name: "Kadai paneer", price: "€11.95" },
+    { name: "Dal Makhani", price: "€9.95" }
   ];
 
   return (

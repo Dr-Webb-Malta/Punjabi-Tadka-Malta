@@ -14,17 +14,11 @@ const Menu = () => {
       className="group cursor-pointer bg-white hover:bg-secondary rounded-xl p-6 
                 transition-all duration-300 shadow-sm hover:shadow-lg"
     >
-      <div className="flex justify-between items-start">
-        <div>
-          <h4 className="text-lg font-medium text-text group-hover:text-white 
-                       transition-colors duration-300">
-            {item.name}
-          </h4>
-          <p className="mt-1 text-sm text-text-light group-hover:text-white/80 
+      <div className="flex justify-between items-center">
+        <h4 className="text-lg font-medium text-text group-hover:text-white 
                      transition-colors duration-300">
-            Traditional Punjabi Style
-          </p>
-        </div>
+          {item.name}
+        </h4>
         <div className="px-4 py-2 rounded-lg bg-primary/5 group-hover:bg-white/10 
                      transition-colors duration-300">
           <span className="text-lg font-semibold text-primary group-hover:text-white">
@@ -38,12 +32,19 @@ const Menu = () => {
   const categories = [
     { id: 'all', name: 'All Items', icon: '🍽️' },
     { id: 'starters', name: 'Starters', icon: '🥘' },
+    { id: 'breakfast', name: 'Breakfast', icon: '🍳' },
     { id: 'vegetarian', name: 'Vegetarian', icon: '🥬' },
     { id: 'nonVegetarian', name: 'Non Vegetarian', icon: '🍗' },
     { id: 'tandoori', name: 'Tandoori', icon: '🔥' },
     { id: 'breads', name: 'Breads', icon: '🫓' },
+    { id: 'pastaAndRolls', name: 'Pasta & Rolls', icon: '🍝' },
     { id: 'riceAndBiryani', name: 'Rice & Biryani', icon: '🍚' },
-    { id: 'softDrinks', name: 'Beverages', icon: '🥤' }
+    { id: 'sides', name: 'Sides', icon: '🥗' },
+    { id: 'dessert', name: 'Dessert', icon: '🍨' },
+    { id: 'lassi', name: 'Lassi', icon: '🥛' },
+    { id: 'beverages', name: 'Beverages', icon: '🥤' },
+    { id: 'beer', name: 'Beer', icon: '🍺' },
+    { id: 'spirits', name: 'Spirits', icon: '🥃' }
   ];
 
   return (
