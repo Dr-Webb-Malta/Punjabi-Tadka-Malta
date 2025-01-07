@@ -25,7 +25,7 @@ const SEOConfig = {
 
 const SEO = ({ page = 'home' }) => {
   const config = SEOConfig[page];
-  const baseUrl = 'https://punjabitadkamalta.com'; // Replace with your actual domain
+  const baseUrl = 'https://punjabitadkamalta.com';
 
   return (
     <Helmet>
@@ -58,15 +58,11 @@ const SEO = ({ page = 'home' }) => {
       
       {/* Language and Region */}
       <meta property="og:locale" content="en_MT" />
-      
-      {/* Social Media Verification (Add your actual verification codes) */}
-      {/* <meta name="facebook-domain-verification" content="your-code-here" /> */}
-      {/* <meta name="google-site-verification" content="your-code-here" /> */}
 
       {/* Schema.org markup for Google */}
       <script type="application/ld+json">
         {`
-          {
+          [{
             "@context": "http://schema.org",
             "@type": "Restaurant",
             "name": "Punjabi Tadka Malta",
@@ -96,8 +92,84 @@ const SEO = ({ page = 'home' }) => {
             "openingHours": [
               "Mo-Sa 12:00-23:00",
               "Su 10:00-23:00"
+            ],
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "${baseUrl}"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Food Menu",
+              "url": "${baseUrl}/menu"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Punjabi Tadka Malta",
+            "url": "${baseUrl}",
+            "potentialAction": [{
+              "@type": "ViewAction",
+              "target": [
+                {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "${baseUrl}/menu",
+                  "name": "View Our Menu"
+                },
+                {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "${baseUrl}/contact",
+                  "name": "Contact Us"
+                }
+              ]
+            }]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "SiteNavigationElement",
+                "position": 1,
+                "name": "Menu",
+                "description": "Explore our delicious menu of authentic Punjabi dishes",
+                "@id": "${baseUrl}/menu",
+                "url": "${baseUrl}/menu"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 2,
+                "name": "Contact Us",
+                "description": "Get in touch with us for reservations and inquiries",
+                "@id": "${baseUrl}/contact",
+                "url": "${baseUrl}/contact"
+              }
             ]
-          }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "${baseUrl}"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Menu",
+                "item": "${baseUrl}/menu"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Contact",
+                "item": "${baseUrl}/contact"
+              }
+            ]
+          }]
         `}
       </script>
     </Helmet>
