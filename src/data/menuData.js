@@ -105,6 +105,8 @@ export const menuData = {
     { name: "ICE TEA PEACH", price: "€2.50" },
     { name: "FALOODA", price: "€2.50" },
     { name: "COCA COLA 330ML", price: "€2.00" },
+    { name: "COCA COLA ZERO 330ML", price: "€2.00" },
+    { name: "PEPSI 330ML", price: "€2.00" },
     { name: "SPRITE 330ML", price: "€2.00" },
     { name: "FANTA 330ML", price: "€2.00" },
     { name: "HELL ENERGY 330ML", price: "€2.00" },
@@ -116,7 +118,9 @@ export const menuData = {
     { name: "CISK EXCEL/CARLSBERG", price: "€3.00" },
     { name: "SKOL", price: "€3.00" },
     { name: "KINGFISHER", price: "€3.00" },
+    { name: "8.6", price: "€3.00" },
     { name: "CORONA", price: "€3.50" }
+    
   ],
   spirits: [
     { name: "RED LABEL", price: "€3.00" },
