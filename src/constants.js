@@ -1,7 +1,7 @@
 export const RESTAURANT_NAME = "Punjabi Tadka Malta";
 export const RESTAURANT_ADDRESS = "43 Triq J. Borg, L MSD 1214";
 export const PHONE_NUMBER = "+35621343841";
-export const COMPANY_NAME = "Umanav Apti LTD";
+export const COMPANY_NAME = "Dr-Webb";
 
 export const COLORS = {
   primary: '#ff671f',

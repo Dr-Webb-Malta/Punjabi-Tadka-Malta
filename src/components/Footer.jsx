@@ -140,7 +140,7 @@ const Footer = () => {
             <div className="md:w-1/3 flex items-center justify-center md:justify-end space-x-2">
               <span className="text-sm text-white/60">Designed by</span>
               <a 
-                href="https://www.umanavapti.com" 
+                href="https://www.dr-webb.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-primary hover:text-primary-light transition-colors duration-300"
